@@ -1,0 +1,299 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"hello_world": "Hello, {name} from en!",
+	"auth": {
+		"login": {
+			"title": "Welcome Back",
+			"subtitle": "Sign in to your account to continue",
+			"email_label": "Email",
+			"email_placeholder": "name@example.com",
+			"password_label": "Password",
+			"password_placeholder": "Enter your password",
+			"remember_me_label": "Remember me for 30 days",
+			"submit_button": "Sign In",
+			"no_account": "Don't have an account?",
+			"register_link": "Register here",
+			"error_invalid_credentials": "Invalid email or password",
+			"error_generic": "An error occurred. Please try again."
+		},
+		"register": {
+			"title": "Create Account",
+			"subtitle": "Get started by creating a new account",
+			"name_label": "Name",
+			"name_placeholder": "Your name",
+			"email_label": "Email",
+			"email_placeholder": "name@example.com",
+			"password_label": "Password",
+			"password_placeholder": "Choose a strong password",
+			"password_confirm_label": "Confirm Password",
+			"password_confirm_placeholder": "Re-enter your password",
+			"submit_button": "Create Account",
+			"have_account": "Already have an account?",
+			"login_link": "Sign in here",
+			"error_email_exists": "An account with this email already exists",
+			"error_passwords_mismatch": "Passwords do not match",
+			"error_generic": "An error occurred. Please try again."
+		},
+		"validation": {
+			"email_required": "Email is required",
+			"email_invalid": "Please enter a valid email address",
+			"password_required": "Password is required",
+			"password_min_length": "Password must be at least 8 characters",
+			"password_confirm_required": "Please confirm your password",
+			"name_required": "Name is required",
+			"name_min_length": "Name must be at least 2 characters"
+		}
+	},
+	"dashboard": {
+		"title": "Dashboard",
+		"welcome": "Welcome back",
+		"projects": {
+			"title": "Projects",
+			"empty": "No projects yet",
+			"empty_description": "Create your first project to get started",
+			"create_button": "Create Project",
+			"view_all": "View all projects"
+		}
+	},
+	"project": {
+		"create": {
+			"title": "Create New Project",
+			"description": "Create a new project to organize your work",
+			"name_label": "Project Name",
+			"name_placeholder": "Enter project name",
+			"template_label": "Copy from Template",
+			"template_none": "Start from scratch",
+			"template_help": "Select an existing project to copy its settings",
+			"copy_settings_label": "Copy Settings",
+			"copy_settings_help": "Include all configuration, columns, and prompts",
+			"submit_button": "Create Project",
+			"cancel_button": "Cancel",
+			"success": "Project created successfully",
+			"error": "Failed to create project"
+		},
+		"settings": {
+			"title": "Project Settings",
+			"save_button": "Save Changes",
+			"tabs": {
+				"basic": "Basic",
+				"columns": "Columns",
+				"prompts": "Prompts"
+			},
+			"basic": {
+				"title": "Basic Information",
+				"name_label": "Project Name",
+				"name_placeholder": "Enter project name",
+				"description_label": "Description",
+				"description_placeholder": "Optional project description"
+			},
+			"vision": {
+				"title": "Vision Model",
+				"endpoint_preset_label": "API Provider",
+				"endpoint_preset_openrouter": "OpenRouter",
+				"endpoint_preset_custom": "Custom OpenAI-compatible API",
+				"endpoint_preset_help": "Choose OpenRouter for easy access to multiple models, or use a custom endpoint for other providers",
+				"endpoint_label": "API Endpoint",
+				"endpoint_openrouter_info": "Using OpenRouter endpoint (https://openrouter.ai/api/v1/chat/completions)",
+				"api_key_label": "API Key (optional)",
+				"api_key_help": "Required for most cloud APIs. Leave empty for local APIs like Ollama.",
+				"model_name_label": "Model Name",
+				"model_name_placeholder": "Enter model name or fetch from endpoint",
+				"model_name_help": "Enter an API endpoint above and click \"Fetch Models\" to load available models",
+				"model_select_placeholder": "Select a model...",
+				"model_search_placeholder": "Search models...",
+				"model_not_found": "No models found",
+				"fetch_models_button": "Fetch Models"
+			},
+			"columns": {
+				"title": "Data Columns",
+				"description": "Define what data to extract from images",
+				"preview_title": "Table Preview",
+				"preview_empty": "No columns defined yet. Add a column to get started.",
+				"name_label": "Column Name",
+				"name_placeholder": "Enter column name",
+				"type_label": "Type",
+				"description_label": "Description",
+				"description_placeholder": "Describe what this field contains",
+				"description_help": "Helps AI understand what to extract",
+				"allowed_values_label": "Allowed Values (optional)",
+				"allowed_values_placeholder": "red, blue, green (comma separated)",
+				"regex_label": "Regex Validation (optional)",
+				"regex_placeholder": "e.g. ^ABC123$ or custom pattern",
+				"add_button": "Add Column",
+				"edit_field": "Edit Field",
+				"swipe_hint": "Swipe left or right to navigate between fields",
+				"field_indicator": "Field {current} of {total}",
+				"delete_field": "Delete Field",
+				"types": {
+					"text": "Text",
+					"number": "Number",
+					"date": "Date",
+					"currency": "Currency",
+					"boolean": "Boolean"
+				}
+			},
+			"prompts": {
+				"title": "AI Prompts",
+				"description": "Configure how AI processes your images",
+				"template_label": "Prompt Template",
+				"template_help": "Use the placeholders to dynamically insert field definitions (FIELDS and FIELD_EXAMPLES wrapped in double curly braces). Edit this template to customize how the AI should analyze images.",
+				"coordinate_format_label": "Expected Coordinate Format",
+				"coordinate_format_help": "Select the coordinate format that matches your model's output. This is saved with the project so you know how to interpret bounding boxes.",
+				"coordinate_format_synced": "Automatically synced with the selected preset. Change the preset above to update this.",
+				"preview_title": "Prompt Preview",
+				"preset_label": "Template Preset",
+				"apply_preset": "Apply Preset",
+				"preset_warning": "Applying a preset will replace your current prompt template. Your custom changes will be overwritten.",
+				"preset_auto_apply": "Selecting a preset will automatically update the prompt template and coordinate format below."
+			}
+		},
+		"validation": {
+			"name_required": "Project name is required",
+			"name_min_length": "Project name must be at least 2 characters"
+		}
+	},
+	"nav": {
+		"dashboard": "Dashboard",
+		"projects": "Projects",
+		"settings": "Settings",
+		"logout": "Logout",
+		"images": "Images",
+		"results": "Results",
+		"images_add": "Add",
+		"images_review": "Review",
+		"images_all": "All Images"
+	},
+	"images": {
+		"add": {
+			"title": "Add Content",
+			"subtitle": "All images in this batch become one table row. Capture all needed information in as few images as possible, but use multiple angles if needed (e.g., front and back of a container).",
+			"camera_button": "Open Camera",
+			"upload_button": "Upload from Gallery",
+			"selected_count": "{count} image(s) selected",
+			"remove_image": "Remove image",
+			"clear_all": "Clear All",
+			"submit_button": "Process Images",
+			"cancel_button": "Cancel",
+			"empty_state": "No images yet",
+			"empty_description": "Tap the camera button to start capturing images"
+		},
+		"results": {
+			"title": "Results",
+			"subtitle": "All approved batches and their extracted data",
+			"loading": "Loading results...",
+			"empty_state": "No approved batches yet",
+			"empty_description": "Process and approve some batches to see results here",
+			"back_to_project": "Back to Project",
+			"export_all": "Export All",
+			"export_batch": "Export",
+			"view_images": "View Images",
+			"batch_label": "Batch",
+			"created_label": "Created",
+			"images_count": "{count} image(s)",
+			"toast": {
+				"failed_to_load": "Failed to load results",
+				"exported": "Data exported successfully"
+			}
+		},
+		"gallery": {
+			"title": "Image Batches",
+			"loading": "Loading...",
+			"upload_button": "Upload Images",
+			"upload_button_short": "Upload",
+			"batch_thumbnail": "Batch thumbnail",
+			"error_loading": "Failed to load image batches",
+			"model_not_configured": "Please configure a model in project settings first",
+			"tabs": {
+				"all": "All",
+				"pending": "Pending",
+				"processing": "Processing",
+				"review": "Review",
+				"approved": "Approved",
+				"failed": "Failed"
+			},
+			"status": {
+				"pending": "Pending",
+				"processing": "Processing",
+				"review": "Review",
+				"approved": "Approved",
+				"failed": "Failed"
+			},
+			"empty_state": {
+				"title": "No batches found",
+				"description_all": "Upload your first batch to get started",
+				"description_filtered": "No {status} batches",
+				"upload_button": "Upload First Batch"
+			}
+		},
+		"review": {
+			"loading": "Loading batches...",
+			"no_batches": "No batches to review",
+			"back_to_project": "Back to Project",
+			"edit_mode": "Edit",
+			"batch_count": "Batch {current}/{total}",
+			"image_count": "Image {current}/{total}",
+			"swipe_accept": "Swipe right to accept",
+			"swipe_decline": "Swipe left to decline",
+			"extracted_data": "Extracted Data",
+			"save_changes": "Save Changes",
+			"decline": "Decline",
+			"accept": "Accept",
+			"cancel": "Cancel",
+			"edit": "Edit",
+			"not_available": "N/A",
+			"zoom_to_region": "Zoom to Region",
+			"mark_region": "Mark Region",
+			"settings": {
+				"title": "Settings",
+				"show_field_names": "Show Field Names",
+				"show_extracted_values": "Show Extracted Values",
+				"coordinate_format": "Coordinate Format",
+				"coordinate_format_pixels": "Pixels [x1, y1, x2, y2]",
+				"coordinate_format_normalized_1000": "Normalized 0-1000 [x1, y1, x2, y2] - Qwen3-VL",
+				"coordinate_format_normalized_1000_yxyx": "Normalized 0-1000 [y_min, x_min, y_max, x_max] - Gemini 2.0",
+				"coordinate_format_normalized_1024_yxyx": "Normalized 0-1023 [y1, x1, y2, x2] - PaliGemma",
+				"coordinate_format_normalized_1": "Normalized 0-1 [x1, y1, x2, y2]",
+				"coordinate_format_yolo": "YOLO [x_center, y_center, width, height]",
+				"coordinate_format_custom": "Custom Factor"
+			},
+			"toast": {
+				"no_batches_to_review": "No batches to review",
+				"failed_to_load": "Failed to load batches",
+				"accepted": "Batch accepted",
+				"declined": "Batch declined",
+				"all_reviewed": "All batches reviewed",
+				"failed_to_accept": "Failed to accept batch",
+				"failed_to_decline": "Failed to decline batch",
+				"saved": "Changes saved",
+				"failed_to_save": "Failed to save changes",
+				"content_cleared": "Content cleared",
+				"failed_to_clear": "Failed to clear content"
+			},
+			"confirm_decline": "Decline this batch? It will be marked as failed."
+		},
+		"actions": {
+			"process": "Process",
+			"process_again": "Process Again",
+			"retry": "Retry",
+			"review": "Review",
+			"view_data": "View Data",
+			"delete": "Delete"
+		}
+	},
+	"sidebar": {
+		"toggle": "Toggle sidebar",
+		"projects": "Projects",
+		"application": "Tabtin"
+	},
+	"theme": {
+		"toggle": "Toggle theme",
+		"light": "Light",
+		"dark": "Dark",
+		"system": "System"
+	},
+	"language": {
+		"select": "Select language",
+		"english": "English",
+		"german": "German"
+	}
+}

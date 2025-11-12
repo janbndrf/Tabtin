@@ -1,0 +1,37 @@
+FROM alpine:latest
+
+# Install runtime dependencies
+RUN apk add --no-cache \
+    ca-certificates \
+    unzip \
+    wget
+
+# Create app directory
+WORKDIR /pb
+
+# Download and install PocketBase
+ARG POCKETBASE_VERSION=0.23.4
+RUN wget https://github.com/pocketbase/pocketbase/releases/download/v${POCKETBASE_VERSION}/pocketbase_${POCKETBASE_VERSION}_linux_amd64.zip \
+    && unzip pocketbase_${POCKETBASE_VERSION}_linux_amd64.zip \
+    && rm pocketbase_${POCKETBASE_VERSION}_linux_amd64.zip \
+    && chmod +x pocketbase
+
+# Copy PocketBase migrations and hooks
+COPY pb/pb_migrations ./pb_migrations
+COPY pb/pb_hooks ./pb_hooks
+
+# Copy the entrypoint script
+COPY docker-entrypoint.sh ./docker-entrypoint.sh
+RUN chmod +x ./docker-entrypoint.sh
+
+# Create directory for PocketBase data
+RUN mkdir -p /pb/pb_data
+
+# Expose PocketBase port
+EXPOSE 8090
+
+# Set the entrypoint
+ENTRYPOINT ["./docker-entrypoint.sh"]
+
+# Default command
+CMD ["./pocketbase", "serve", "--http=0.0.0.0:8090", "--migrationsDir=pb_migrations"]

@@ -1,0 +1,299 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"hello_world": "Hello, {name} from de!",
+	"auth": {
+		"login": {
+			"title": "Willkommen zurück",
+			"subtitle": "Melden Sie sich an, um fortzufahren",
+			"email_label": "E-Mail",
+			"email_placeholder": "name@beispiel.de",
+			"password_label": "Passwort",
+			"password_placeholder": "Geben Sie Ihr Passwort ein",
+			"remember_me_label": "30 Tage angemeldet bleiben",
+			"submit_button": "Anmelden",
+			"no_account": "Noch kein Konto?",
+			"register_link": "Hier registrieren",
+			"error_invalid_credentials": "Ungültige E-Mail oder Passwort",
+			"error_generic": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+		},
+		"register": {
+			"title": "Konto erstellen",
+			"subtitle": "Erstellen Sie ein neues Konto",
+			"name_label": "Name",
+			"name_placeholder": "Ihr Name",
+			"email_label": "E-Mail",
+			"email_placeholder": "name@beispiel.de",
+			"password_label": "Passwort",
+			"password_placeholder": "Wählen Sie ein sicheres Passwort",
+			"password_confirm_label": "Passwort bestätigen",
+			"password_confirm_placeholder": "Passwort wiederholen",
+			"submit_button": "Konto erstellen",
+			"have_account": "Bereits ein Konto?",
+			"login_link": "Hier anmelden",
+			"error_email_exists": "Ein Konto mit dieser E-Mail existiert bereits",
+			"error_passwords_mismatch": "Passwörter stimmen nicht überein",
+			"error_generic": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+		},
+		"validation": {
+			"email_required": "E-Mail ist erforderlich",
+			"email_invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+			"password_required": "Passwort ist erforderlich",
+			"password_min_length": "Passwort muss mindestens 8 Zeichen lang sein",
+			"password_confirm_required": "Bitte bestätigen Sie Ihr Passwort",
+			"name_required": "Name ist erforderlich",
+			"name_min_length": "Name muss mindestens 2 Zeichen lang sein"
+		}
+	},
+	"dashboard": {
+		"title": "Dashboard",
+		"welcome": "Willkommen zurück",
+		"projects": {
+			"title": "Projekte",
+			"empty": "Noch keine Projekte",
+			"empty_description": "Erstellen Sie Ihr erstes Projekt, um loszulegen",
+			"create_button": "Projekt erstellen",
+			"view_all": "Alle Projekte anzeigen"
+		}
+	},
+	"project": {
+		"create": {
+			"title": "Neues Projekt erstellen",
+			"description": "Erstellen Sie ein neues Projekt, um Ihre Arbeit zu organisieren",
+			"name_label": "Projektname",
+			"name_placeholder": "Projektnamen eingeben",
+			"template_label": "Von Vorlage kopieren",
+			"template_none": "Von vorne beginnen",
+			"template_help": "Wählen Sie ein vorhandenes Projekt aus, um dessen Einstellungen zu kopieren",
+			"copy_settings_label": "Einstellungen kopieren",
+			"copy_settings_help": "Alle Konfigurationen, Spalten und Prompts einschließen",
+			"submit_button": "Projekt erstellen",
+			"cancel_button": "Abbrechen",
+			"success": "Projekt erfolgreich erstellt",
+			"error": "Projekt konnte nicht erstellt werden"
+		},
+		"settings": {
+			"title": "Projekteinstellungen",
+			"save_button": "Änderungen speichern",
+			"tabs": {
+				"basic": "Grundlagen",
+				"columns": "Spalten",
+				"prompts": "Prompts"
+			},
+			"basic": {
+				"title": "Grundlegende Informationen",
+				"name_label": "Projektname",
+				"name_placeholder": "Projektnamen eingeben",
+				"description_label": "Beschreibung",
+				"description_placeholder": "Optionale Projektbeschreibung"
+			},
+			"vision": {
+				"title": "Vision-Modell",
+				"endpoint_preset_label": "API-Anbieter",
+				"endpoint_preset_openrouter": "OpenRouter",
+				"endpoint_preset_custom": "Benutzerdefinierte OpenAI-kompatible API",
+				"endpoint_preset_help": "Wählen Sie OpenRouter für einfachen Zugriff auf mehrere Modelle oder verwenden Sie einen benutzerdefinierten Endpunkt für andere Anbieter",
+				"endpoint_label": "API-Endpunkt",
+				"endpoint_openrouter_info": "OpenRouter-Endpunkt wird verwendet (https://openrouter.ai/api/v1/chat/completions)",
+				"api_key_label": "API-Schlüssel (optional)",
+				"api_key_help": "Erforderlich für die meisten Cloud-APIs. Leer lassen für lokale APIs wie Ollama.",
+				"model_name_label": "Modellname",
+				"model_name_placeholder": "Modellname eingeben oder vom Endpunkt abrufen",
+				"model_name_help": "Geben Sie oben einen API-Endpunkt ein und klicken Sie auf \"Modelle abrufen\", um verfügbare Modelle zu laden",
+				"model_select_placeholder": "Modell auswählen...",
+				"model_search_placeholder": "Modelle durchsuchen...",
+				"model_not_found": "Keine Modelle gefunden",
+				"fetch_models_button": "Modelle abrufen"
+			},
+			"columns": {
+				"title": "Datenspalten",
+				"description": "Definieren Sie, welche Daten aus Bildern extrahiert werden sollen",
+				"preview_title": "Tabellenvorschau",
+				"preview_empty": "Noch keine Spalten definiert. Fügen Sie eine Spalte hinzu, um zu beginnen.",
+				"name_label": "Spaltenname",
+				"name_placeholder": "Spaltennamen eingeben",
+				"type_label": "Typ",
+				"description_label": "Beschreibung",
+				"description_placeholder": "Beschreiben Sie, was dieses Feld enthält",
+				"description_help": "Hilft der KI zu verstehen, was extrahiert werden soll",
+				"allowed_values_label": "Erlaubte Werte (optional)",
+				"allowed_values_placeholder": "rot, blau, grün (durch Kommas getrennt)",
+				"regex_label": "Regex-Validierung (optional)",
+				"regex_placeholder": "z.B. ^ABC123$ oder eigenes Muster",
+				"add_button": "Spalte hinzufügen",
+				"edit_field": "Feld bearbeiten",
+				"swipe_hint": "Wischen Sie nach links oder rechts, um zwischen Feldern zu navigieren",
+				"field_indicator": "Feld {current} von {total}",
+				"delete_field": "Feld löschen",
+				"types": {
+					"text": "Text",
+					"number": "Zahl",
+					"date": "Datum",
+					"currency": "Währung",
+					"boolean": "Boolean"
+				}
+			},
+			"prompts": {
+				"title": "KI-Prompts",
+				"description": "Konfigurieren Sie, wie die KI Ihre Bilder verarbeitet",
+				"template_label": "Prompt-Vorlage",
+				"template_help": "Verwenden Sie die Platzhalter, um Felddefinitionen dynamisch einzufügen (FIELDS und FIELD_EXAMPLES in doppelten geschweiften Klammern). Bearbeiten Sie diese Vorlage, um anzupassen, wie die KI Bilder analysieren soll.",
+				"coordinate_format_label": "Erwartetes Koordinatenformat",
+				"coordinate_format_help": "Wählen Sie das Koordinatenformat, das der Ausgabe Ihres Modells entspricht. Dies wird mit dem Projekt gespeichert, damit Sie wissen, wie Bounding Boxes zu interpretieren sind.",
+				"coordinate_format_synced": "Automatisch mit der ausgewählten Voreinstellung synchronisiert. Ändern Sie die Voreinstellung oben, um dies zu aktualisieren.",
+				"preview_title": "Prompt-Vorschau",
+				"preset_label": "Vorlagen-Voreinstellung",
+				"apply_preset": "Voreinstellung anwenden",
+				"preset_warning": "Das Anwenden einer Voreinstellung ersetzt Ihre aktuelle Prompt-Vorlage. Ihre benutzerdefinierten Änderungen werden überschrieben.",
+				"preset_auto_apply": "Die Auswahl einer Voreinstellung aktualisiert automatisch die Prompt-Vorlage und das Koordinatenformat unten."
+			}
+		},
+		"validation": {
+			"name_required": "Projektname ist erforderlich",
+			"name_min_length": "Projektname muss mindestens 2 Zeichen lang sein"
+		}
+	},
+	"nav": {
+		"dashboard": "Dashboard",
+		"projects": "Projekte",
+		"settings": "Einstellungen",
+		"logout": "Abmelden",
+		"images": "Bilder",
+		"results": "Ergebnisse",
+		"images_add": "Hinzufügen",
+		"images_review": "Überprüfen",
+		"images_all": "Alle Bilder"
+	},
+	"images": {
+		"add": {
+			"title": "Inhalt hinzufügen",
+			"subtitle": "Alle Bilder in diesem Stapel werden zu einer Tabellenzeile. Erfassen Sie alle benötigten Informationen in möglichst wenigen Bildern, verwenden Sie aber mehrere Aufnahmen bei Bedarf (z.B. Vorder- und Rückseite eines Containers).",
+			"camera_button": "Kamera öffnen",
+			"upload_button": "Aus Galerie hochladen",
+			"selected_count": "{count} Bild(er) ausgewählt",
+			"remove_image": "Bild entfernen",
+			"clear_all": "Alle löschen",
+			"submit_button": "Bilder verarbeiten",
+			"cancel_button": "Abbrechen",
+			"empty_state": "Noch keine Bilder",
+			"empty_description": "Tippen Sie auf die Kamera-Schaltfläche, um Bilder aufzunehmen"
+		},
+		"results": {
+			"title": "Ergebnisse",
+			"subtitle": "Alle genehmigten Stapel und deren extrahierte Daten",
+			"loading": "Ergebnisse werden geladen...",
+			"empty_state": "Noch keine genehmigten Stapel",
+			"empty_description": "Verarbeiten und genehmigen Sie Stapel, um hier Ergebnisse zu sehen",
+			"back_to_project": "Zurück zum Projekt",
+			"export_all": "Alle exportieren",
+			"export_batch": "Exportieren",
+			"view_images": "Bilder anzeigen",
+			"batch_label": "Stapel",
+			"created_label": "Erstellt",
+			"images_count": "{count} Bild(er)",
+			"toast": {
+				"failed_to_load": "Fehler beim Laden der Ergebnisse",
+				"exported": "Daten erfolgreich exportiert"
+			}
+		},
+		"gallery": {
+			"title": "Bild-Stapel",
+			"loading": "Lädt...",
+			"upload_button": "Bilder hochladen",
+			"upload_button_short": "Hochladen",
+			"batch_thumbnail": "Stapel-Vorschau",
+			"error_loading": "Fehler beim Laden der Bild-Stapel",
+			"model_not_configured": "Bitte konfigurieren Sie zuerst ein Modell in den Projekteinstellungen",
+			"tabs": {
+				"all": "Alle",
+				"pending": "Ausstehend",
+				"processing": "Verarbeitung",
+				"review": "Überprüfung",
+				"approved": "Genehmigt",
+				"failed": "Fehlgeschlagen"
+			},
+			"status": {
+				"pending": "Ausstehend",
+				"processing": "Verarbeitung",
+				"review": "Überprüfung",
+				"approved": "Genehmigt",
+				"failed": "Fehlgeschlagen"
+			},
+			"empty_state": {
+				"title": "Keine Stapel gefunden",
+				"description_all": "Laden Sie Ihren ersten Stapel hoch",
+				"description_filtered": "Keine {status} Stapel",
+				"upload_button": "Ersten Stapel hochladen"
+			}
+		},
+		"review": {
+			"loading": "Stapel werden geladen...",
+			"no_batches": "Keine Stapel zu überprüfen",
+			"back_to_project": "Zurück zum Projekt",
+			"edit_mode": "Bearbeiten",
+			"batch_count": "Stapel {current}/{total}",
+			"image_count": "Bild {current}/{total}",
+			"swipe_accept": "Nach rechts wischen zum Akzeptieren",
+			"swipe_decline": "Nach links wischen zum Ablehnen",
+			"extracted_data": "Extrahierte Daten",
+			"save_changes": "Änderungen speichern",
+			"decline": "Ablehnen",
+			"accept": "Akzeptieren",
+			"cancel": "Abbrechen",
+			"edit": "Bearbeiten",
+			"not_available": "N/A",
+			"zoom_to_region": "In Region zoomen",
+			"mark_region": "Region markieren",
+			"settings": {
+				"title": "Einstellungen",
+				"show_field_names": "Feldnamen anzeigen",
+				"show_extracted_values": "Extrahierte Werte anzeigen",
+				"coordinate_format": "Koordinatenformat",
+				"coordinate_format_pixels": "Pixel [x1, y1, x2, y2]",
+				"coordinate_format_normalized_1000": "Normalisiert 0-1000 [x1, y1, x2, y2] - Qwen3-VL",
+				"coordinate_format_normalized_1000_yxyx": "Normalisiert 0-1000 [y_min, x_min, y_max, x_max] - Gemini 2.0",
+				"coordinate_format_normalized_1024_yxyx": "Normalisiert 0-1023 [y1, x1, y2, x2] - PaliGemma",
+				"coordinate_format_normalized_1": "Normalisiert 0-1 [x1, y1, x2, y2]",
+				"coordinate_format_yolo": "YOLO [x_center, y_center, width, height]",
+				"coordinate_format_custom": "Benutzerdefinierter Faktor"
+			},
+			"toast": {
+				"no_batches_to_review": "Keine Stapel zu überprüfen",
+				"failed_to_load": "Fehler beim Laden der Stapel",
+				"accepted": "Stapel akzeptiert",
+				"declined": "Stapel abgelehnt",
+				"all_reviewed": "Alle Stapel überprüft",
+				"failed_to_accept": "Fehler beim Akzeptieren des Stapels",
+				"failed_to_decline": "Fehler beim Ablehnen des Stapels",
+				"saved": "Änderungen gespeichert",
+				"failed_to_save": "Fehler beim Speichern der Änderungen",
+				"content_cleared": "Inhalt gelöscht",
+				"failed_to_clear": "Fehler beim Löschen des Inhalts"
+			},
+			"confirm_decline": "Diesen Stapel ablehnen? Er wird als fehlgeschlagen markiert."
+		},
+		"actions": {
+			"process": "Verarbeiten",
+			"process_again": "Erneut verarbeiten",
+			"retry": "Wiederholen",
+			"review": "Überprüfen",
+			"view_data": "Daten anzeigen",
+			"delete": "Löschen"
+		}
+	},
+	"sidebar": {
+		"toggle": "Seitenleiste umschalten",
+		"projects": "Projekte",
+		"application": "Tabtin"
+	},
+	"theme": {
+		"toggle": "Theme umschalten",
+		"light": "Hell",
+		"dark": "Dunkel",
+		"system": "System"
+},
+	"language": {
+		"select": "Sprache auswählen",
+		"english": "Englisch",
+		"german": "Deutsch"
+	}
+}

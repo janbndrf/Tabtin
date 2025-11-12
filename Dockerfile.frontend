@@ -1,0 +1,56 @@
+# Build stage
+FROM node:22-alpine AS builder
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci --production=false
+
+# Copy source files
+COPY . .
+
+# Accept build arguments for environment variables
+ARG PUBLIC_POCKETBASE_URL
+ENV PUBLIC_POCKETBASE_URL=$PUBLIC_POCKETBASE_URL
+
+# Build the application
+RUN npm run build
+
+# Production stage
+FROM node:22-alpine
+
+WORKDIR /app
+
+# Install nginx
+RUN apk add --no-cache nginx
+
+# Copy package files for production dependencies
+COPY package*.json ./
+
+# Install only production dependencies
+RUN npm ci --production
+
+# Copy built application from builder
+COPY --from=builder /app/build ./build
+
+# Copy nginx configuration
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Copy entrypoint script
+COPY frontend-entrypoint.sh /frontend-entrypoint.sh
+RUN chmod +x /frontend-entrypoint.sh
+
+# Accept runtime environment variables
+ARG PUBLIC_POCKETBASE_URL
+ENV PUBLIC_POCKETBASE_URL=$PUBLIC_POCKETBASE_URL
+ENV PORT=3000
+ENV HOST=0.0.0.0
+
+# Expose port 80 (nginx)
+EXPOSE 80
+
+# Start both Node.js server and nginx
+ENTRYPOINT ["/frontend-entrypoint.sh"]

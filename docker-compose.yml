@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: pocketbase-backend
+    environment:
+      - POCKETBASE_ADMIN_EMAIL=${POCKETBASE_ADMIN_EMAIL}
+      - POCKETBASE_ADMIN_PASSWORD=${POCKETBASE_ADMIN_PASSWORD}
+    volumes:
+      - pocketbase_data:/pb/pb_data
+    ports:
+      - "8090:8090"
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8090/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+      args:
+        # Use empty or root path since nginx proxies all PocketBase requests
+        - PUBLIC_POCKETBASE_URL=${PUBLIC_POCKETBASE_URL:-}
+    container_name: sveltekit-frontend
+    environment:
+      - DOCKER_ENV=true
+      - POCKETBASE_ADMIN_EMAIL=${POCKETBASE_ADMIN_EMAIL}
+      - POCKETBASE_ADMIN_PASSWORD=${POCKETBASE_ADMIN_PASSWORD}
+      - POCKETBASE_URL=http://backend:8090
+    ports:
+      - "80:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - app-network
+    # Add host.docker.internal to allow container to reach host machine
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    # Use host DNS for proper LAN hostname resolution
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    restart: unless-stopped
+
+volumes:
+  pocketbase_data:
+    driver: local
+
+networks:
+  app-network:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: br-app
+    ipam:
+      config:
+        - subnet: 172.27.0.0/16
