@@ -74,7 +74,7 @@ Before starting, ensure you have:
 
 - OpenRouter API (free tier with 10€ credit)
 
-- Local LLM setup
+- **Local LLM setup**
   
 
 See the [AI Model Options](#ai-model-options) section below for details on obtaining API keys and setting up models.
