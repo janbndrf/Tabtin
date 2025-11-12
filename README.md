@@ -91,7 +91,7 @@ See the [AI Model Options](#ai-model-options) section below for details on obtai
 
 ```bash
 
-git  clone  https://github.com/YOUR_USERNAME/tabtin.git
+git  clone  https://github.com/janbndrf/tabtin.git
 
 cd  tabtin
 
